@@ -59,15 +59,17 @@ const makeOptimizedUrl = (path, { type, width } = {}) => {
         // check for width before returning
     }
 
-    if(!urlObject.pathname.includes('pub')){
-        params.set('url', 'pub'+urlObject.pathname);
-        return  type ? `${resizeBase}${width}?${params}` : path;
-    }else{
+    var returnImageUrl;
+
+    if (!urlObject.pathname.includes('pub')) {
+        params.set('url', 'pub' + urlObject.pathname);
+        returnImageUrl =  type ? `${resizeBase}${width}?${params}` : path;
+    } else {
         params.set('url', urlObject.pathname);
-        return `${resizeBase}${width}?${params}`
+        returnImageUrl =  `${resizeBase}${width}?${params}`;
     }
 
-    return type ? urlObject.pathname : path;
+    return returnImageUrl;
 };
 
 export default makeOptimizedUrl;
