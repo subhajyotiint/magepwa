@@ -66,6 +66,8 @@ const makeOptimizedUrl = (path, { type, width } = {}) => {
         params.set('url', urlObject.pathname);
         return `${resizeBase}${width}?${params}`
     }
+
+    return type ? urlObject.pathname : path;
 };
 
 export default makeOptimizedUrl;
