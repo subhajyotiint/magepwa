@@ -17,3 +17,6 @@ yarn-error.log
 # Packages that build partially transpiled ES modules put them here
 packages/*/esm/*
 docker/certs
+package.json
+yarn.lock
+package-lock.json
