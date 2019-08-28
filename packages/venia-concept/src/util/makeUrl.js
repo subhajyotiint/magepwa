@@ -59,17 +59,6 @@ const makeOptimizedUrl = (path, { type, width } = {}) => {
         // check for width before returning
     }
 
-    // if (width) {
-    //     // set pathname as query param
-    //     // encodeURIComponent would be redundant
-    //     params.set('url', urlObject.pathname);
-
-    //     return `${resizeBase}${width}?${params}`;
-    // }
-
-    // return unaltered path if we didn't operate on it
-
-    var urlPre = '';
     if(!urlObject.pathname.includes('pub')){
         params.set('url', 'pub'+urlObject.pathname);
         return  type ? `${resizeBase}${width}?${params}` : path;
